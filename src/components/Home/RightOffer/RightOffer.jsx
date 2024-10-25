@@ -31,7 +31,7 @@ function RightOffer() {
   return (
     <div className="space-y-5">
       <div className="pb-5 bg-white space-y-3 border border-[#395BEF] rounded-t-[4px]">
-        <button className="text-lg text-left px-4 py-2.5 w-full text-white bg-[#395BEF]">
+        <button className="text-xl text-left px-4 py-2.5 w-full text-white bg-[#395BEF]">
           Add To Cart
         </button>
         <Image
@@ -41,10 +41,10 @@ function RightOffer() {
           alt="offer"
           className="w-full h-[200px] rounded-xl"
         />
-        <h2 className="text-center text-lg font-semibold">
+        <h2 className="text-center font-semibold">
           Xbox Wireless Controller
         </h2>
-        <h2 className="text-center text-sm font-semibold">Price: 229.01</h2>
+        <h2 className="text-center font-semibold">Price: 229.01</h2>
         <div className="flex items-center justify-center gap-1 text-xl pb-5 text-yellow-300">
           <FaStar />
           <FaStar />
@@ -53,34 +53,34 @@ function RightOffer() {
           <FaRegStar />
         </div>
         <p className="flex items-center gap-1 justify-center">
-          <span className="text-lg px-1 py-1 w-[40px] rounded-[4px] text-white bg-[#395BEF] text-center">
+          <span className="px-1 py-1 w-[40px] rounded-[4px] text-white bg-[#395BEF] text-center">
             {countdown.days}
           </span>
-          <span className="text-lg px-1 py-1 w-[40px] rounded-[4px] text-white bg-[#395BEF] text-center">
+          <span className="px-1 py-1 w-[40px] rounded-[4px] text-white bg-[#395BEF] text-center">
             {countdown.hours}
           </span>
-          <span className="text-lg px-1 py-1 w-[40px] rounded-[4px] text-white bg-[#395BEF] text-center">
+          <span className="px-1 py-1 w-[40px] rounded-[4px] text-white bg-[#395BEF] text-center">
             {countdown.minutes}
           </span>
-          <span className="text-lg px-1 py-1 w-[40px] rounded-[4px] text-white bg-[#395BEF] text-center">
+          <span className="px-1 py-1 w-[40px] rounded-[4px] text-white bg-[#395BEF] text-center">
             {countdown.seconds}
           </span>
         </p>
       </div>
       <div className="bg-white space-y-3 border border-[#395BEF] rounded-t-[4px]">
-        <button className="text-lg text-left px-4 py-2.5 w-full text-white bg-[#395BEF]">
+        <button className="text-left text-xl px-4 py-2.5 w-full text-white bg-[#395BEF]">
           Review Carousel
         </button>
         <RightCarousel />
       </div>
       <div className="pb-5 bg-[#395aef23] space-y-3 border border-[#395BEF] rounded-t-[4px]">
-        <button className="text-lg text-left px-4 py-2.5 w-full text-white bg-[#395BEF]">
+        <button className="text-left text-xl px-4 py-2.5 w-full text-white bg-[#395BEF]">
           Samsung Galaxy
         </button>
-        <h2 className="text-lg font-semibold text-center px-3">
+        <h2 className="font-semibold text-center px-3">
           Samsung Galaxy Z Fold4
         </h2>
-        <p className="text-sm font-semibold text-center px-3">
+        <p className="font-semibold text-center px-3">
           Series X|S, Xbox One, Windows PC, and mobile.
         </p>
         <div className="px-3">
@@ -94,7 +94,7 @@ function RightOffer() {
         </div>
       </div>
       <div className="pb-5 bg-white rounded-[4px] border border-[#395BEF] rounded-t-[4px] space-y-3">
-        <button className="text-lg text-left px-4 py-2.5 w-full text-white bg-[#395BEF]">
+        <button className="text-xl text-left px-4 py-2.5 w-full text-white bg-[#395BEF]">
           Add To Cart
         </button>
         <div className="flex">
@@ -106,15 +106,15 @@ function RightOffer() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
         <div className="flex">
@@ -126,15 +126,15 @@ function RightOffer() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
         <div className="flex">
@@ -146,15 +146,15 @@ function RightOffer() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
         <div className="flex">
@@ -166,15 +166,15 @@ function RightOffer() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
       </div>

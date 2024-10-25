@@ -18,8 +18,8 @@ function LeftComponent() {
     <div>
       <div className="px-3 py-5 bg-[#395aef23] rounded-[4px] ">
         <div className="space-y-3">
-          <h2 className="text-xl font-semibold">Samsung Galaxy Z Fold4</h2>
-          <p className="text-sm font-medium">
+          <h2>Samsung Galaxy Z Fold4</h2>
+          <p className="font-medium">
             Series X|S, Xbox One, Windows PC, and mobile.
           </p>
         </div>
@@ -32,7 +32,7 @@ function LeftComponent() {
         />
       </div>
       <div className="mt-5 pb-5 bg-white rounded-[4px] border border-white rounded-t-[4px] space-y-3">
-        <button className="text-lg text-left px-4 py-2.5 w-full rounded-t-[4px] text-white bg-[#395BEF]">
+        <button className="text-left px-4 py-2.5 w-full rounded-t-[4px] text-white bg-[#395BEF] font-bold">
           Offers Product
         </button>
         <div className="flex">
@@ -44,15 +44,15 @@ function LeftComponent() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
         <div className="flex">
@@ -64,15 +64,15 @@ function LeftComponent() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
         <div className="flex">
@@ -84,15 +84,15 @@ function LeftComponent() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
         <div className="flex">
@@ -104,15 +104,15 @@ function LeftComponent() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
         <div className="flex">
@@ -124,15 +124,15 @@ function LeftComponent() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
         <div className="flex">
@@ -144,15 +144,15 @@ function LeftComponent() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
         <div className="flex">
@@ -164,15 +164,15 @@ function LeftComponent() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
         <div className="flex">
@@ -184,15 +184,15 @@ function LeftComponent() {
             className="w-[50px] h-[50px]"
           />
           <div className="space-y-1">
-            <h2 className="text-sm font-semibold">Samsung Galaxy Z Fold4</h2>
-            <div className="flex items-center gap-1 text-sm text-yellow-300">
+            <h2>Samsung Galaxy Z Fold4</h2>
+            <div className="flex items-center gap-1 text-yellow-300">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStarHalfAlt />
               <FaRegStar />
             </div>
-            <p className="text-sm font-semibold">Price: 5434</p>
+            <p className="font-semibold">Price: 5434</p>
           </div>
         </div>
       </div>

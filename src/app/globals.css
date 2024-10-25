@@ -7,23 +7,6 @@ body {
   font-family: "Roboto", "Arial", sans-serif;
 }
 
-.button {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #395BEF;
-  /* Or any color you prefer */
-  color: white;
-}
-
-.offer {
-  border-radius: 200px 0px 195px 200px;
-  -webkit-border-radius: 200px 0px 195px 200px;
-  -moz-border-radius: 200px 0px 195px 200px;
-  background-color: #395BEF;
-}
-
 @keyframes slideDown {
   from {
     transform: translateY(-100%);

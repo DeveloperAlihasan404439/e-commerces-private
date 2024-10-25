@@ -63,7 +63,7 @@ function Navbar() {
       category: "Beauty",
     },
     {
-      category: "Home Appliances",
+      category: "Appliances",
       subMenu: [
         { brand: "Whirlpool" },
         { brand: "GE" },

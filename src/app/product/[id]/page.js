@@ -24,9 +24,11 @@ function ProductPage({ params }) {
   const [ram, setRam] = useState("32GB");
   const [color, setColor] = useState("Red");
   const [quantity, setQuantity] = useState(1);
+  const [image, setImage] = useState("")
 
   const increment = () => setQuantity(quantity + 1);
   const decrement = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
+
 
   const details = {
     image:
@@ -346,14 +348,27 @@ function ProductPage({ params }) {
               <Image
                 width={500}
                 height={500}
-                className="w-full h-[400px]"
-                src="https://img.freepik.com/free-photo/close-up-alarm-clock-black-background_23-2147943901.jpg?size=626&ext=jpg&ga=GA1.1.1053088745.1709813754&semt=ais_hybrid"
+                className="w-full h-[380px] rounded"
+                src={image? image : details.image}
                 alt=""
               />
             </div>
+            <div className="flex items-center gap-3 overflow-x-auto w-full">
+              {details?.sub_product?.map((item, index) => (
+                <Image
+                  key={index}
+                  width={300}
+                  height={300}
+                  src={item}
+                  onClick={()=> setImage(item)}
+                  alt="Product"
+                  className="w-20 h-20 rounded"
+                />
+              ))}
+            </div>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-2 mt-3 lg:mt-0">
             <h1 className="text-xl font-semibold">
               Apple iMac 24 All-In-One Computer, Apple M1, 8GB RAM, 256GB SSD,
               Mac OS, Pink
@@ -584,50 +599,13 @@ function ProductPage({ params }) {
                   >
                     Red
                   </p>
-                  {/* <div
-                    className="w-5 h-5 bg-blue-600 rounded-full cursor-pointer"
-                    onClick={() => setColor("Blue")}
-                  ></div>
-                  <div
-                    className="w-5 h-5 bg-red-600 rounded-full cursor-pointer"
-                    onClick={() => setColor("Red")}
-                  ></div>
-                  <div
-                    className="w-5 h-5 bg-green-600 rounded-full cursor-pointer"
-                    onClick={() => setColor("Green")}
-                  ></div> */}
                 </div>
               </div>
-
-              {/* Quantity Select Field */}
-              {/* <div className="space-y-2 flex items-center gap-5">
-                <label
-                  htmlFor="quantity"
-                  className="block text-sm font-medium text-black"
-                >
-                  Quantity
-                </label>
-                <div className="flex items-center gap-4 bg-gray-100 px-4 py-2 rounded-md text-gray-700">
-                  <div
-                    className="bg-white text-xl w-6 h-6 flex items-center justify-center rounded-full cursor-pointer"
-                    onClick={decrement}
-                  >
-                    <FaMinus />
-                  </div>
-                  <h2>{quantity}</h2>
-                  <div
-                    className="bg-white text-xl w-6 h-6 flex items-center justify-center rounded-full cursor-pointer"
-                    onClick={increment}
-                  >
-                    <FaPlus />
-                  </div>
-                </div>
-              </div> */}
             </div>
 
             <div className="flex items-center flex-wrap justify-between pt-5 gap-2">
               <div className="flex items-center flex-wrap gap-2">
-                <div className="flex items-center gap-4 bg-gray-100 px-4 py-2.5 rounded-md text-gray-700">
+                <div className="flex items-center gap-4 bg-gray-100 px-4 py-2.5 rounded-md text-[#395bef]">
                   <div
                     className="bg-white text-xl w-6 h-6 flex items-center justify-center rounded-full cursor-pointer"
                     onClick={decrement}
@@ -643,7 +621,7 @@ function ProductPage({ params }) {
                   </div>
                 </div>
 
-                <button className="button px-4 py-2 border-2 border-[#395bef] text-lg rounded hover:bg-[#395bef] hover:text-white font-semibold cursor-pointer">
+                <button className="button px-4 py-2 border-2 border-[#395bef] rounded hover:bg-[#395bef] hover:text-white font-semibold cursor-pointer">
                   Add To Cart
                 </button>
 
@@ -657,7 +635,7 @@ function ProductPage({ params }) {
         </div>
 
         <AllReviews />
-        <div className="box-area grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
+        <div className="box-area grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
           {data?.slice(0, 12).map((item, index) => (
             <div key={index} className="box">
               <div className="p-5 bg-white h-[250px] space-y-2">
@@ -673,32 +651,32 @@ function ProductPage({ params }) {
                     <h2>{item.new}</h2>
                   </div>
                 )}
-                <h2 className="text-center text-sm font-semibold ">
+                <h2 className="text-center font-semibold ">
                   {item.title.length > 20
                     ? item.title.slice(0, 20) + "..."
                     : item.title}
                 </h2>
-                <div className="flex items-center justify-center gap-1 text-lg text-yellow-300">
+                <div className="flex items-center justify-center gap-1 text-yellow-300">
                   <FaStar />
                   <FaStar />
                   <FaStar />
                   <FaStarHalfAlt />
                   <FaRegStar />
                 </div>
-                <h2 className="text-sm font-medium text-center">
+                <h2 className="font-bold text-center">
                   Price: ${item.price}
                 </h2>
               </div>
               <div className="overlay">
                 <div className="flex items-center justify-center gap-3 mt-4">
-                  <button className="text-sm px-2 py-1 rounded-[4px] text-white bg-[#395BEF]">
+                  <button className="px-2 py-1 rounded-[4px] text-white bg-[#395BEF]">
                     <FaRegHeart />
                   </button>
-                  <button className="text-sm px-2 py-1 rounded-[4px] text-black border border-[#395BEF] hover:text-white bg-gray-50 hover:bg-[#395BEF]">
+                  <button className="px-2 py-1 rounded-[4px] text-black border border-[#395BEF] hover:text-white bg-gray-50 hover:bg-[#395BEF]">
                     <FaEye />
                   </button>
                 </div>
-                <h2 className="px-3 text-xs">
+                <h2 className="text-[16px] px-3">
                   {item.title.length > 15
                     ? item.title.slice(0, 15) + "..."
                     : item.title}

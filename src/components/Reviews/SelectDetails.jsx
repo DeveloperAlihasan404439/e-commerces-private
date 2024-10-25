@@ -5,16 +5,11 @@ import { IoMdClose } from "react-icons/io";
 function SelectDetails() {
   const [showModal, setShowModal] = useState(false);
 
-  const handleSetData = () => {
-    // Close modal
-    setShowModal(false);
-  };
-
   return (
     <div>
       <button
         onClick={() => setShowModal(!showModal)}
-        className="button px-4 py-2 border-2 border-[#395bef] text-lg rounded bg-[#395bef] text-white font-semibold cursor-pointer"
+        className="button px-4 py-2 border-2 border-[#395bef] rounded bg-[#395bef] text-white font-semibold cursor-pointer"
       >
         Select Details
       </button>

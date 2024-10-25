@@ -8,12 +8,13 @@ import rocket from "../../../images/payment/rocket.png";
 import visa from "../../../images/payment/visa.png";
 import cashon from "../../../images/payment/cashon.png";
 import Image from "next/image";
+
 function Footer() {
   return (
-    <div className="border-t-2 mt-5">
+    <div className="border-t-2 mt-5 font-robot">
       <footer className="bg-black">
         <div className="mx-auto w-full max-w-screen-xl">
-          <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-6">
+          <div className="grid grid-cols-1 gap-8 px-4 py-6 lg:py-8 md:grid-cols-6">
             <div className="md:col-span-2">
               <h2 className="mb-6 font-semibold text-white uppercase ">
                 Address
@@ -74,13 +75,13 @@ function Footer() {
                 <input
                   type="search"
                   id="location-search"
-                  className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-s-gray-50 border-s-2 border border-gray-300 "
+                  className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded border-s-gray-50 border-s-2 border border-gray-300 "
                   placeholder="Email address"
                   required
                 />
                 <button
                   type="submit"
-                  className="absolute top-0 end-0 h-full p-2.5 text-sm font-medium text-white bg-blue-700 rounded-e-lg border border-blue-700 focus:outline-none"
+                  className="absolute top-0 end-0 h-full p-2.5 text-sm font-medium text-white bg-blue-700 rounded-e border border-blue-700 focus:outline-none"
                 >
                   Subscribe
                 </button>

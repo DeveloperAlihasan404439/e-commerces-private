@@ -3,10 +3,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import { IoMenu } from "react-icons/io5";
 import { FaAngleDown } from "react-icons/fa6";
-import { FaMinus, FaPlus } from "react-icons/fa6";
+
 function MobileMenu() {
   const [sidebar, setSidebar] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null); 
+  const [activeMenu, setActiveMenu] = useState(null);
   const sidebarRef = useRef(null);
 
   // Toggle sidebar open/close
@@ -206,7 +206,7 @@ function MobileMenu() {
               <li key={index} className="relative">
                 <div
                   onClick={() => handleDropdownClick(menu.category)}
-                  className="flex items-center justify-between py-2 px-3 bg-gray-100 text-black hover:bg-[#395BEF] hover:text-white rounded cursor-pointer mb-[1px]"
+                  className="flex items-center justify-between py-2 px-3 text-black hover:bg-[#395BEF] hover:text-white rounded cursor-pointer mb-[1px]"
                 >
                   <span>{menu.category}</span>
                   {menu.subMenu && (
@@ -228,7 +228,7 @@ function MobileMenu() {
                     {menu.subMenu.map((item, idx) => (
                       <li
                         key={idx}
-                        className="py-2 px-3 bg-gray-100 text-black hover:bg-[#395BEF] hover:text-white rounded cursor-pointer"
+                        className="py-2 px-3 text-black hover:bg-[#395BEF] hover:text-white rounded cursor-pointer"
                       >
                         <Link href="#">{item.brand}</Link>
                       </li>

@@ -19,6 +19,7 @@ import image5 from "../../../images/product/download__1_-removebg-preview.png";
 import image6 from "../../../images/product/download-removebg-preview.png";
 
 import "./Carousel.css";
+import ButtonFrom from "@/components/Shared/ButtonFrom";
 
 function CarouselPage() {
   // Define the slides array
@@ -38,8 +39,8 @@ function CarouselPage() {
   }, [slides.length]);
 
   return (
-    <div className="pt-5 relative lg:flex justify-between items-center gap-5 w-[90%] mx-auto h-full">
-      <div className="w-full lg:w-[20%] h-[500px] lg:flex flex-col gap-5 bg-white hidden">
+    <div className="pt-5 relative lg:flex justify-between gap-5 w-[90%] mx-auto h-full">
+      <div className="w-full lg:w-[20%] h-[460px] lg:flex flex-col gap-5 bg-gray-50 hidden">
         <SidebarMenubarCarousel />
       </div>
       <div className="w-full lg:w-[80%] h-[500px]">
@@ -58,7 +59,7 @@ function CarouselPage() {
                     <Image
                       width={500}
                       height={500}
-                      className="w-[300px] h-[300px]"
+                      className="w-[300px] h-[350px]"
                       src={slide}
                       alt=""
                     />
@@ -67,7 +68,8 @@ function CarouselPage() {
 
                 <div className="space-y-5">
                   <h1 className="text-xl font-semibold">
-                    Apple iMac 24 All-In-One Computer, Apple M1, 8GB RAM, 256GB SSD, Mac OS, Pink
+                    Apple iMac 24 All-In-One Computer, Apple M1, 8GB RAM, 256GB
+                    SSD, Mac OS, Pink
                   </h1>
                   <div className="flex items-center gap-2">
                     {/* Rating section */}
@@ -99,7 +101,10 @@ function CarouselPage() {
                     </a>
                   </div>
                   <p className="mb-6 text-gray-500 dark:text-gray-400">
-                    Studio quality three mic array for crystal clear calls and voice recordings. Six-speaker sound system for a remarkably robust and high-quality audio experience. Up to 256GB of ultrafast SSD storage.
+                    Studio quality three mic array for crystal clear calls and
+                    voice recordings. Six-speaker sound system for a remarkably
+                    robust and high-quality audio experience. Up to 256GB of
+                    ultrafast SSD storage.
                   </p>
 
                   <div className="sm:items-center sm:gap-4 sm:flex">
@@ -109,9 +114,7 @@ function CarouselPage() {
                   </div>
 
                   <div className="flex items-center gap-5">
-                    <button className="button px-4 py-2.5 border-2 border-[#395bef] bg-[#395bef] text-lg rounded-lg text-white font-semibold cursor-pointer">
-                      Buy New
-                    </button>
+                    <ButtonFrom link="#" text="Buy New" size="20px" />
                   </div>
                 </div>
               </div>

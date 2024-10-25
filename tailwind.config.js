@@ -15,7 +15,7 @@ module.exports = {
       },
       fontFamily: {
         "robot": "Roboto, Arial, sans-serif;"
-      }
+      },
     },
   },
   plugins: [require('flowbite/plugin')],

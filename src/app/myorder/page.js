@@ -89,8 +89,8 @@ function page() {
   ];
 
   return (
-    <div className="w-[90%] mx-auto my-5 border bg-gray-50 rounded shadow-md">
-      <div className="flex justify-between gap-5 md:flex-row-reverse">
+    <div className="w-[90%] mx-auto my-5 border rounded shadow-md">
+      <div className="md:flex justify-between gap-5 md:flex-row-reverse">
         <div className="w-full lg:w-[20%] bg-gray-50 py-8 px-4">
           <h2 className="text-lg font-bold border-b-2 pb-2 border-gray-200">
             Order Summary
@@ -104,8 +104,8 @@ function page() {
             </h2>
           </div>
         </div>
-        <div className="w-full lg:w-[80%] bg-white p-8">
-          <div className="flex items-center justify-between">
+        <div className="w-full lg:w-[80%] bg-white ">
+          <div className="flex items-center justify-between p-8">
             <h2 className="text-lg font-bold mb-3">My Order List</h2>
             <h2 className="text-lg font-bold mb-3">
               Total Item :<span className="text-[#395BEF]"> 10</span>

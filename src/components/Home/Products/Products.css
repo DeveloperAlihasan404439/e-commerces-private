@@ -12,13 +12,13 @@
     top: 5px;
     left: 0;
     width: 50px;
-    background: #000;
+    background: #395BEF;
     color: white;
 }
 
 .new {
     padding: 5px 5px;
-    font-size: 12px;
+    font-size: 16px;
     text-transform: uppercase;
     box-sizing: border-box;
     border-radius: 0 15px 15px 0;

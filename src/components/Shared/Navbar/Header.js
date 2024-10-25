@@ -10,6 +10,8 @@ import Link from "next/link";
 import Profile from "./Profile";
 import BookList from "./BookList";
 import { FiSearch } from "react-icons/fi";
+import Cookies from "js-cookie";
+import { i18n, useTranslation } from "next-i18next";
 
 function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -76,25 +78,14 @@ function Header() {
   const asianCurrencies = Object.keys(currencies).filter((key) =>
     asianCountries.includes(currencies[key].code.slice(0, 2))
   );
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest("#Languages")) {
-        setLanguagesOpen(false);
-      }
-    };
-    const handleClickOutCurrency = (event) => {
-      if (!event.target.closest("#Currency")) {
-        setCurrencyListOpen(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    document.addEventListener("click", handleClickOutCurrency);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-      document.removeEventListener("click", handleClickOutCurrency);
-    };
-  }, []);
+  const changeLanguage = (lang) => {
+    console.log(lang);
+    const getCookies = Cookies.get("lang");
+    if (getCookies) {
+      Cookies.remove();
+    }
+    Cookies.set("lang", lang);
+  };
 
   return (
     <div className="border-b border-[#00101f] bg-[#00101f] shadow-lg">
@@ -104,7 +95,7 @@ function Header() {
           {/* Mobile View */}
           <div className="lg:hidden flex items-center gap-2">
             <MobileMenu />
-            <Link href="/" className="text-xl font-medium">
+            <Link href="/" className="font-medium">
               Flip Mart
             </Link>
           </div>
@@ -115,7 +106,8 @@ function Header() {
             <div className="relative">
               <button
                 id="Currency"
-                onClick={() => setCurrencyListOpen(!currencyList)}
+                onMouseEnter={() => setCurrencyListOpen(!currencyList)}
+                onMouseLeave={() => setCurrencyListOpen(!currencyList)}
                 className="text-[16px] flex items-center gap-1 px-3 py-1"
               >
                 <MdCurrencyExchange />
@@ -125,28 +117,29 @@ function Header() {
                     currencyList ? "rotate-180" : "rotate-0"
                   }`}
                 />
-              </button>
-              {currencyList && (
-                <div className="absolute top-full mt-1  w-[200px] bg-white shadow-md shadow-[#395BEF] text-black z-30">
-                  <div className="overflow-y-auto h-60">
-                    {asianCurrencies.map((key, index) => (
-                      <p
-                        key={index}
-                        className="px-4 py-2 text-[16px] hover:bg-[#395BEF] hover:text-white"
-                      >
-                        {currencies[key].name}
-                      </p>
-                    ))}
+                {currencyList && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200px] bg-white shadow-md shadow-[#395BEF] text-black z-30">
+                    <div className="overflow-y-auto h-60">
+                      {asianCurrencies.map((key, index) => (
+                        <p
+                          key={index}
+                          className="px-4 py-2 text-[16px] hover:bg-[#395BEF] hover:text-white"
+                        >
+                          {currencies[key].name}
+                        </p>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </button>
             </div>
 
             {/* Language Dropdown */}
             <div className="relative">
               <button
                 id="Languages"
-                onClick={() => setLanguagesOpen(!languagesOpen)}
+                onMouseEnter={() => setLanguagesOpen(!languagesOpen)}
+                onMouseLeave={() => setLanguagesOpen(!languagesOpen)}
                 className="text-[16px] flex items-center gap-1 px-3 py-1"
               >
                 <TbWorld />
@@ -156,32 +149,45 @@ function Header() {
                     languagesOpen ? "rotate-180" : "rotate-0"
                   }`}
                 />
+                {languagesOpen && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[200px] bg-white shadow-md text-black shadow-[#395BEF] z-30">
+                    <div>
+                      <button
+                        onClick={() => changeLanguage("en")}
+                        className="px-4 py-2 block text-[16px] hover:bg-[#395BEF] hover:text-white w-full text-left"
+                      >
+                        English
+                      </button>
+                      <button
+                        onClick={() => changeLanguage("hi")}
+                        className="px-4 py-2 block text-[16px] hover:bg-[#395BEF] hover:text-white w-full text-left"
+                      >
+                        Hindi
+                      </button>
+                      <button
+                        onClick={() => changeLanguage("ar")}
+                        className="px-4 py-2 block text-[16px] hover:bg-[#395BEF] hover:text-white w-full text-left"
+                      >
+                        Arabic
+                      </button>
+                    </div>
+                  </div>
+                )}
               </button>
-              {languagesOpen && (
-                <div className="absolute top-full mt-1 w-[200px] bg-white shadow-md text-black shadow-[#395BEF]">
-                  <ul>
-                    <li className="px-4 py-2 text-[16px] hover:bg-[#395BEF] hover:text-white">
-                      Bengali
-                    </li>
-                    <li className="px-4 py-2 text-[16px] hover:bg-[#395BEF] hover:text-white">
-                      Hindi
-                    </li>
-                  </ul>
-                </div>
-              )}
             </div>
           </div>
         </div>
 
         {/* Search, Profile, and Whatsapp */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <div className="flex items-center gap-1 lg:hidden">
             {/* Search */}
             {/* Currency Dropdown */}
             <div className="relative">
               <button
                 id="Currency"
-                onClick={() => setCurrencyListOpen(!currencyList)}
+                onMouseEnter={() => setCurrencyListOpen(!currencyList)}
+                onMouseLeave={() => setCurrencyListOpen(!currencyList)}
                 className="text-[16px] flex items-center gap-1 px-3 py-1"
               >
                 <MdCurrencyExchange />
@@ -196,7 +202,7 @@ function Header() {
                 </div>
               </button>
               {currencyList && (
-                <div className="z-40 absolute top-7 -right-10 text-black mt-1 w-[200px] bg-white shadow-md rounded-t">
+                <div className="z-40 absolute top-full -right-20 md:-right-10 text-black mt-1 w-[200px] bg-white shadow-md rounded-t">
                   <div className="overflow-y-auto h-60">
                     {asianCurrencies.map((key, index) => (
                       <p
@@ -215,7 +221,8 @@ function Header() {
             <div className="relative">
               <button
                 id="Languages"
-                onClick={() => setLanguagesOpen(!languagesOpen)}
+                onMouseEnter={() => setLanguagesOpen(!languagesOpen)}
+                onMouseLeave={() => setLanguagesOpen(!languagesOpen)}
                 className="text-[16px] flex items-center gap-1 px-3 py-1"
               >
                 <TbWorld />
@@ -227,25 +234,32 @@ function Header() {
                     }`}
                   />
                 </div>
+                {languagesOpen && (
+                  <div className="absolute top-5 -right-5 md:-right-8 text-black mt-1 w-[200px] bg-white shadow-md z-50 rounded-t">
+                    <div>
+                      <button className="px-4 py-2 block text-[16px] hover:bg-[#395BEF] hover:text-white w-full text-left">
+                        Bengali
+                      </button>
+                      <button className="px-4 py-2 block text-[16px] hover:bg-[#395BEF] hover:text-white w-full text-left">
+                        Hindi
+                      </button>
+                      <button
+                        onClick={() => changeLanguage("ar")}
+                        className="px-4 py-2 block text-[16px] hover:bg-[#395BEF] hover:text-white w-full text-left"
+                      >
+                        Arabic
+                      </button>
+                    </div>
+                  </div>
+                )}
               </button>
-              {languagesOpen && (
-                <div className="absolute top-7 -right-8 text-black mt-1 w-[200px] bg-white shadow-md z-50">
-                  <ul>
-                    <li className="px-4 py-2 text-[16px] hover:bg-[#395BEF] hover:text-white">
-                      Bengali
-                    </li>
-                    <li className="px-4 py-2 text-[16px] hover:bg-[#395BEF] hover:text-white">
-                      Hindi
-                    </li>
-                  </ul>
-                </div>
-              )}
             </div>
             <div>
               <FiSearch
                 id="setSearchOpen"
                 className="text-xl cursor-pointer"
-                onClick={() => setSearchOpen(!searchOpen)}
+                onMouseEnter={() => setSearchOpen(!searchOpen)}
+                onMouseLeave={() => setSearchOpen(!searchOpen)}
               />
               {searchOpen && (
                 <div className="z-1000">

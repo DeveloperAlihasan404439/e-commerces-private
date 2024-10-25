@@ -49,9 +49,9 @@ function CartProduct() {
 
   const data = getData();
   return (
-    <section className="bg-white py-4 antialiased w-[90%] mx-auto">
+    <section className=" py-4 antialiased w-[90%] mx-auto">
       <div className=" lg:flex lg:items-start xl:gap-5">
-        <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
+        <div className="mx-auto w-full flex-none lg:max-w-4xl">
           <div className="space-y-3 border border-gray-100 bg-white">
             <div className="flex items-center justify-between px-3 py-2 bg-gray-50">
               <h2 className="text-lg font-bold">Shopping Cart</h2>
@@ -60,85 +60,103 @@ function CartProduct() {
                 <span className="text-[#395BEF]">{products?.length}</span>
               </h2>
             </div>
-            {products?.map((item, index) => (
-              <div key={index} className="border-b px-3 py-1">
-                <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-4">
-                  <a href="#" className="shrink-0 ">
-                    <Image
-                      width={500}
-                      height={500}
-                      className=" w-32 h-20 "
-                      src={item.image}
-                      alt="imac image"
-                    />
-                  </a>
-                  <div className="flex items-center justify-between md:order-3 md:justify-end">
-                    <p className="text-base font-bold text-gray-900 ">
-                      ${item.price}
-                    </p>
-                  </div>
 
-                  <div className="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-                    <a
-                      href="#"
-                      className="text-base font-medium text-gray-900 hover:underline "
+            <div className="relative overflow-x-auto">
+              <table className="w-full min-w-max text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <tbody>
+                  {products?.map((item, index) => (
+                    <tr
+                      key={index}
+                      className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                     >
-                      {item.title}
-                    </a>
-
-                    <div className="flex items-center gap-4">
-                      <button
-                        type="button"
-                        className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline  "
+                      <th
+                        scope="row"
+                        className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                       >
-                        <svg
-                          className="me-1.5 h-5 w-5"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            strokeWidth="2"
-                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                        <Link href="#" className="w-24">
+                          <Image
+                            width={500}
+                            height={500}
+                            className="w-32 h-20"
+                            src={item.image}
+                            alt="image"
                           />
-                        </svg>
-                        Add to Favorites
-                      </button>
+                        </Link>
+                      </th>
 
-                      <button
-                        type="button"
-                        className="inline-flex items-center text-sm font-medium text-red-600 hover:underline "
-                      >
-                        <svg
-                          className="me-1.5 h-5 w-5"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            strokeWidth="2"
-                            d="M6 18 17.94 6M18 18 6.06 6"
-                          />
-                        </svg>
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+                      <td className="px-6 py-4">
+                        <div className="space-y-4 md:order-2 w-[400px]">
+                          <a
+                            href="#"
+                            className="text-base font-medium text-gray-900 hover:underline"
+                          >
+                            {item.title}
+                          </a>
+
+                          <div className="flex items-center gap-4">
+                            <button
+                              type="button"
+                              className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline"
+                            >
+                              <svg
+                                className="me-1.5 h-5 w-5"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                                />
+                              </svg>
+                              Add to Favorites
+                            </button>
+
+                            <button
+                              type="button"
+                              className="inline-flex items-center text-sm font-medium text-red-600 hover:underline"
+                            >
+                              <svg
+                                className="me-1.5 h-5 w-5"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  strokeWidth="2"
+                                  d="M6 18 17.94 6M18 18 6.06 6"
+                                />
+                              </svg>
+                              Remove
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td className="px-6 py-4">
+                        <div className="flex items-center justify-between md:order-3 md:justify-end">
+                          <p className="text-base font-bold text-gray-900">
+                            ${item.price}
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -251,7 +269,7 @@ function CartProduct() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-5 mt-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-5 mt-5">
         {data?.slice(0, 12).map((item, index) => (
           <div key={index} className="box border">
             <div className="p-5 bg-white h-[250px] space-y-2">

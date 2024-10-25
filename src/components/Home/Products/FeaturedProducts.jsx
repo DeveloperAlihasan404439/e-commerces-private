@@ -7,6 +7,7 @@ import { FaShoppingBag } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa6";
 import { FaStarHalfAlt, FaStar } from "react-icons/fa";
 import Link from "next/link";
+import ButtonFrom from "@/components/Shared/ButtonFrom";
 function getData() {
   const filePath = path.join(process.cwd(), "public", "data.json");
   const jsonData = fs.readFileSync(filePath, "utf-8");
@@ -20,11 +21,9 @@ function FeaturedProducts() {
     <div>
       <div className="pb-3 mb-5 border-b border-[#395BEF] flex items-center justify-between">
         <h2 className="text-xl font-bold tracking-wider">Featured Products</h2>
-        <Link href='/featured' className="text-lg px-4 py-2 rounded-[4px] text-white bg-[#395BEF]">
-          Show All
-        </Link>
+        <ButtonFrom link="/featured" text="Show All" size="20px" />
       </div>
-      <div className="box-area grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="box-area grid grid-cols-1 sm:grid-cols-2 gap-5">
         {data?.slice(0, 6).map((item, index) => (
           <div key={index} className="box">
             <div className="p-5 flex items-center gap-2">
@@ -41,29 +40,23 @@ function FeaturedProducts() {
                 </div>
               )}
               <div className="w-[50%]">
-                <h2 className="text-[160x]">{item.title}</h2>
-                <div className="flex items-center gap-1 text-xl pb-5 text-yellow-300">
+                <h2 className="font-bold">{item.title}</h2>
+                <div className="flex items-center gap-1 pb-5 text-yellow-300">
                   <FaStar />
                   <FaStar />
                   <FaStar />
                   <FaStarHalfAlt />
                   <FaRegStar />
                 </div>
-                <h2 className="text-[16px] font-medium ">
-                  Price: ${item.price}
-                </h2>
+                <h2 className="font-bold">Price: ${item.price}</h2>
               </div>
             </div>
             <div className="overlay_featured">
               <div className="flex items-center justify-center gap-3 mt-4">
-                <button className="text-[16px] px-2 py-1 rounded text-white bg-[#395BEF]">
-                  <FaRegHeart />
-                </button>
-                <button className="text-[16px] px-2 py-1 rounded text-black border border-[#395BEF] hover:text-white bg-gray-50 hover:bg-[#395BEF]">
-                  <FaEye />
-                </button>
+                <ButtonFrom link="#" text={<FaRegHeart />} size="16px"/>
+                <ButtonFrom link="#" text={<FaEye />} size="16px" />
               </div>
-              <h2>{item.title}</h2>
+              <h2 className="text-[16px]">{item.title}</h2>
               <Link href={`/product/${item.id}`} className="btn">
                 <FaShoppingBag /> Add to Card
               </Link>
